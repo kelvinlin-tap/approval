@@ -4,7 +4,7 @@ module Approval
 
     def self.define_user_association
       belongs_to :request_user, class_name: Approval.config.user_class_name
-      belongs_to :respond_user, class_name: Approval.config.user_class_name, optional: true
+      belongs_to :respond_user, class_name: Approval.config.user_class_name
     end
 
     has_many :comments, class_name: :"Approval::Comment", inverse_of: :request, dependent: :destroy
